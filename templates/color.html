@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Colors</title>
+</head>
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+</style>
+<body style="text-align: center;">
+    <img src="{{ url_for('static', filename='img/output.png')}}" alt="User Image" class="center" style="width:20%">
+
+    <h1>Here are the top 10 colors of this image:</h1>
+    <div>
+        {% for color in palette %}
+        <div style="color: {{color}}; padding: 3px; display: inline;" class="center">
+            {{color}}
+        </div>
+        {% endfor %}
+    </div>
+    <div style="padding: 20px;">
+        <a href="/" style="">Do another image!</a>
+    </div>
+</body>
+</html>
